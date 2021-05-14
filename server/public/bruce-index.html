@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div id='navbar'>
+        <div class='logo'></div>
+        <div class='navbar-link'>
+            <ul class='dock'>
+                <li id='standardForm'><i class="fab fa-stripe-s"></i>tandard Form</li>
+                <li id='fetchForm'><i class="fab fa-facebook-f"></i>etch Form</li>
+            </ul>
+        </div>
+    </div>
+    <header></header>
+    <main class='main-container'>
+        <form method="POST" id='loginForm' class='not-show' action='http://localhost:8080/login'>
+            <label name='name'>Name: 
+                <input type='text' name='username' id='username' />
+            </label><br>
+            <label name='password'>password: 
+                <input type='password' name='password' id='password' />
+            </label><br>
+            <div class='btn' id='standardButton'><input type='submit' value='login' /></div>
+        </form>
+        <form method="POST" id='fetchLoginForm' action='http://localhost:8080/login'>
+            <label name='name'>Name: 
+                <input type='text' name='fetchUsername' id='fetchUsername' />
+            </label><br>
+            <label name='password'>password: 
+                <input type='password' name='fetchPassword' id='fetchPassword' />
+            </label><br>
+            <div class='btn' id='fetchButton'><input type='submit' class='button' value='login' /></div>
+        </form>
+        <div id='fetch-area'></div>
+    </main>
+    <button class='button' id='showTodolist'>Show To Do List</button>
+    <footer></footer>
+    <script src="index.js"></script>
+</body>
+</html>
