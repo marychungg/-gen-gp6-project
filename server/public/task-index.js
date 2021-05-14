@@ -17,25 +17,21 @@ fetchLoginForm.addEventListener('submit', async (event) => {
         headers:{
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(formObject),
+        body: JSON.stringify(formObject), 
     })
     let jsonResponse = await response.json();
 })
 
 // Delete Card
-async function deleteCard(){  
-    const deleteCard = document.querySelector('#delButton')
-    deleteCard.addEventListener('click', async (del) => {
-    del.preventDefault();
-    const response = await fetch(`http://localhost:8080/todolist/${id}`, {
-        method: 'DELETE',
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formObject),
+    const deleteArea = document.querySelector('#delButton')
+    deleteArea.addEventListener('click', () => {
+        fetch(`http://localhost:8080/todolist/7`, {
+            method: 'DELETE',
+        })
+        .then(res => res.text()) 
+        .then(res => console.log(res))
     })
-})
-}
+    
 
 
 
