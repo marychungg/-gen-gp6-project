@@ -22,9 +22,40 @@ fetchLoginForm.addEventListener('submit', async (event) => {
     let jsonResponse = await response.json();
 })
 
+// Edit Card
+const saveArea = document.querySelector('#fetchSaveCardForm')
+saveArea.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const formObject = {};
+    formObject['id'] = form.putId.value;
+    formObject['name'] = form.putName.value;
+    formObject['description'] = form.putDescription.value;
+    formObject['assignedto'] = form.putAssignedto.value;
+    formObject['duedate'] = form.putDuedate.value;
+    formObject['status'] = form.putStatus.value;
+    const response = await fetch("http://localhost:8080/todolist/7", {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formObject),
+    })
+    .then(response => {
+    console.log(response);
+    })
+    .catch(err => {
+    console.error(err);
+    });
+        let jsonResponse = await response.json();
+    })
+
+
 // Delete Card
     const deleteArea = document.querySelector('#delButton')
     deleteArea.addEventListener('click', () => {
+        // let a = new URLSearchParams (window.location.search)
+        // let id = a.get('id')
         fetch(`http://localhost:8080/todolist/7`, {
             method: 'DELETE',
         })
@@ -32,8 +63,6 @@ fetchLoginForm.addEventListener('submit', async (event) => {
         .then(res => console.log(res))
     })
     
-
-
 
 // [todo] GET!
 async function showCard(){  

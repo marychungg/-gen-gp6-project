@@ -325,7 +325,7 @@
                                 <input class="form-control" type="date" value="2021-04-15" id="example-date-input" readonly>
                             </div>
                         </div>
-                        <button id='delButton' type="submit button" class="btn btn-primary" onclick="javascript:window.location.reload()">Delete</button>
+
                     </form>
 
 
@@ -333,7 +333,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#EditCard1Modal"><i class="fas fa-edit mr-2"></i>Edit Card</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id='delButton' type="submit button" class="btn btn-primary" onclick="javascript:window.location.reload()">Delete</button>
 
                 </div>
             </div>
@@ -353,7 +353,7 @@
                 </div>
 
                 <div class="modal-body text-left">
-                    <form>
+                    <!-- <form>
                         <div class="form-group">
                             <label for="taskcard-name" class="col-form-label"><span style="font-size: 0.9rem;">Task Name</span></label>
                             <input type="text" class="form-control" id="taskcard-name" value="Learn Figma">
@@ -401,13 +401,34 @@
                                 <input class="form-control" type="date" value="2021-04-15" id="example-date-input">
                             </div>
                         </div>
+                        
+                    </form> -->
+                    <form method="PUT" id='fetchSaveCardForm' action='http://localhost:8080/todolist/7'>
+                        <label name='id'>Id: 
+                            <input type='text' name='putId' id='putId' />
+                        </label><br>
+                        <label name='name'>Name: 
+                            <input type='text' name='putName' id='putName' />
+                        </label><br>
+                        <label name='description'>Description: 
+                            <input type='text' name='putDescription' id='putDescription' />
+                        </label><br>
+                        <label name='assignedto'>Assigned to: 
+                            <input type='text' name='putAssignedto' id='putAssignedto' />
+                        </label><br>
+                        <label name='duedate'>Due date: 
+                            <input type='text' name='putDuedate' id='putDuedate' />
+                        </label><br>
+                        <label name='status'>Status: 
+                            <input type='text' name='putStatus' id='putStatus' />
+                        </label><br>
+                        <button id='saveButton' type="submit button" class="btn btn-primary" onclick="javascript:window.location.reload()">Save Changes</button>
                     </form>
-
 
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                 </div>
